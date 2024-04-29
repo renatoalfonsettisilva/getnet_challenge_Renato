@@ -23,9 +23,9 @@ public class CreateResourceTest {
             .post("/users")
         .then()
             .statusCode(201)
-            .body("id", notNullValue("12345"))
+            .body("id", equalTo("12345"))
             .body("name", equalTo("Renato Silva"))
             .body("job", equalTo("QA"))
-            .body("createdAt", notNullValue("01/01/2024"));
+            .body("createdAt", equalTo("01/01/2024"));
     }
 }
